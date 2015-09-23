@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: redirect('/photos')
-  get "/auth/:provider/callback" => "sessions#create"
-  get "/logout" => "sessions#destroy", as: :logout
 
   resources :photos
   # The priority is based upon order of creation: first created -> highest priority.

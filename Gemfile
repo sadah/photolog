@@ -49,5 +49,6 @@ group :development do
 end
 
 gem 'carrierwave'
+gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
