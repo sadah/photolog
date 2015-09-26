@@ -14,7 +14,7 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    @photo = Photo.new
+    @photo = curennt_user.phots.build
   end
 
   # GET /photos/1/edit
@@ -64,11 +64,11 @@ class PhotosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
-      @photo = Photo.find(params[:id])
+      @photo = current_user.photos.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:image, :caption)
+      params.require(:photo).permit(:image, :caption, :user_id)
     end
 end
