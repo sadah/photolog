@@ -1,20 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <title>Photolog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta charset="utf-8">
+  <title>photolog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if user_signed_in? %>
-    <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Twitter login', user_omniauth_authorize_path(:twitter) %>
-  <% end %>
-  <%= yield %>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><a href="#">Home</a></li>
+          <li role="presentation"><a href="#">About</a></li>
+          <li role="presentation"><a href="#">Contact</a></li>
+          <li role="presentation">
+            <% if user_signed_in? %>
+              <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to 'Twitter login', user_omniauth_authorize_path(:twitter) %>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">photolog</h3>
+    </div>
+    <%= yield %>
+    <footer class="footer">
+      <p>&copy; Company 2014</p>
+    </footer>
+  </div>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
