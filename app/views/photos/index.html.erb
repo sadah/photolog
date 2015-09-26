@@ -1,13 +1,11 @@
 
 
 <div class="jumbotron">
-  <h1>Jumbotron heading</h1>
-  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
-  <p><%= link_to 'New Photo', new_photo_path %></p>
 </div>
 
-<div class="row marketing">
+<div class="row photo-feed-wrapper">
   <div class="col-lg-6 photo-feed">
     <% @photos.each do |photo| %>
       <%= image_tag(photo.image_url, class: "img-responsive") if photo.image.present? %>

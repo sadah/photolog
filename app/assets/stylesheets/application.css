@@ -23,18 +23,15 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
+.photo-feed-wrapper,
 .footer {
   padding-right: 15px;
   padding-left: 15px;
 }
-/* Custom page header */
 .header {
   padding-bottom: 20px;
 }
-/* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -55,7 +52,6 @@ body {
 .container-narrow > hr {
   margin: 30px 0;
 }
-/* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
@@ -64,11 +60,10 @@ body {
   padding: 14px 24px;
   font-size: 21px;
 }
-/* Supporting marketing content */
-.marketing {
+.photo-feed-wrapper {
   margin: 40px 0;
 }
-.marketing p + h4 {
+.photo-feed-wrapper p + h4 {
   margin-top: 28px;
 }
 .photo-info {
@@ -79,7 +74,7 @@ body {
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
+  .photo-feed-wrapper,
   .footer {
     padding-right: 0;
     padding-left: 0;
@@ -99,7 +94,7 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
-  .marketing {
+  .photo-feed-wrapper {
     margin: 0;
     padding: 0;
   }
