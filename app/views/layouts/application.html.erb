@@ -16,16 +16,22 @@
     <div class="header clearfix">
       <nav>
         <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active">
-            <% if user_signed_in? %>
+          <% if user_signed_in? %>
+            <li role="presentation" class="active">
+              <%= link_to 'New Photo', new_photo_path %>
+            </li>
+            <li role="presentation">
               <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-            <% else %>
+            </li>
+          <% else %>
+            <li role="presentation" class="active">
               <%= link_to 'Twitter login', user_omniauth_authorize_path(:twitter) %>
-            <% end %>
+            </li>
+          <% end %>
           </li>
         </ul>
       </nav>
-      <h3 class="text-muted">photolog</h3>
+      <h3 class="text-muted"><%= link_to 'photolog', root_path %></h3>
     </div>
     <%= yield %>
     <footer class="footer">
